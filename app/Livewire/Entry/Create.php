@@ -110,8 +110,8 @@ class Create extends Component
             'is_married' => $formData['isMarried'],
             'marriage_date' => $marriageDate,
             'marriage_country' => $formData['marriageCountry'],
-            'is_widowed' => $formData['isWidowed'],
-            'is_separated' => $formData['isSeparated'],
+            'is_widowed' => !$formData['isMarried'] ? $formData['isWidowed'] : null,
+            'is_separated' => !$formData['isMarried'] ? $formData['isSeparated'] : null,
         ]);
 
         $this->form->reset();
