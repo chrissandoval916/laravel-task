@@ -75,6 +75,12 @@ class Create extends Component
             ? Carbon::createFromDate($marriageDateData['mYear'], $marriageDateData['mMonth'], $marriageDateData['mDay'])
             : null;
 
+        //Check birthdate is not in the future. Should be caught already by step validation, but do it again just in case
+        if ($birthDate->gt(Carbon::now())) {
+            $this->currentStep = 1;
+            throw ValidationException::withMessages(['form.bYear' => 'Birthday cannot occur in the future']);
+        }
+
         if (!empty($marriageDate)) {
             $eighteenDate = $birthDate->addYears(18);
 
