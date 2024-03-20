@@ -10,7 +10,7 @@
             <li>City: {{ $entry->city }}</li>
             <li>Country: {{ $entry->country }}</li>
             <li>Birthdate: {{ $entry->birthdate }}</li>
-            <li>Is Married: {{ $entry->is_married ? 'Yes' : 'No' }}</li>
+            <li>Is Married: {{ $entry->is_married == 1 ? 'Yes' : 'No' }}</li>
             <li>Marriage Date: {{ $entry->marriage_date }}</li>
             <li>Marriage Country: {{ $entry->marriage_country }}</li>
             <li>Is a Widow: {{ $entry->is_widowed == 1 ? 'Yes' : 'No'  }}</li>
