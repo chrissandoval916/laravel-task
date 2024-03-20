@@ -13,8 +13,8 @@
             <li>Is Married: {{ $entry->is_married ? 'Yes' : 'No' }}</li>
             <li>Marriage Date: {{ $entry->marriage_date }}</li>
             <li>Marriage Country: {{ $entry->marriage_country }}</li>
-            <li>Is a Widow: {{ $entry->is_widowed ? 'Yes' : 'No'  }}</li>
-            <li>Is Separated: {{ $entry->is_separated ? 'Yes' : 'No'  }}</li>
+            <li>Is a Widow: {{ $entry->is_widowed == 1 ? 'Yes' : 'No'  }}</li>
+            <li>Is Separated: {{ $entry->is_separated == 1 ? 'Yes' : 'No'  }}</li>
         </ul>
     </div>
 </div>
