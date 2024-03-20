@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Company Inc - {{ $title }}</title>
+    <title>Company Inc - {{ $title ?? '' }}</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -28,11 +28,11 @@
                     </a>
                 </div>
                 <div class="flex gap-x-12">
-                    @if (Route::has('register'))
+                    @if (Route::has('entry.create'))
                         <a href="{{ route('index') }}" class="text-sm font-semibold leading-6 text-gray-900">
                             Home
                         </a>
-                        <a href="{{ route('register') }}" class="text-sm font-semibold leading-6 text-gray-900">
+                        <a href="{{ route('entry.create') }}" class="text-sm font-semibold leading-6 text-gray-900">
                             Register
                         </a>
                     @endif
@@ -40,7 +40,7 @@
             </nav>
         </header>
         <div class="relative isolate px-6 pt-14 lg:px-8">
-            <div class="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
+            <div class="mx-auto max-w-2xl py-16">
                 {{ $slot }}
             </div>
         </div>
